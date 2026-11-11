@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Summarize, Don't Watch",
+  "version": "0.4.2",
+  "minimum_chrome_version": "111",
+  "description": "Hover a YouTube thumbnail to see the summary from YouTube's own Ask/Gemini feature. Bulk-summarize the subscriptions feed in the background.",
+  "permissions": ["storage", "unlimitedStorage", "scripting"],
+  "host_permissions": ["https://*.youtube.com/*"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/watch*"],
+      "js": ["worker-page.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_page": "options.html"
+}

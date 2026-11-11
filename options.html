@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Summarize, Don&#39;t Watch – Options</title>
+  <style>
+    body { font: 14px system-ui, sans-serif; max-width: 480px; margin: 32px auto; padding: 0 16px; }
+    label { display: block; margin: 14px 0 4px; font-weight: 600; }
+    input { width: 80px; padding: 6px 8px; font: inherit; }
+    button { margin-top: 18px; padding: 8px 16px; font: inherit; cursor: pointer; }
+    small { display: block; color: #666; margin-top: 4px; }
+    #status { margin-left: 10px; color: #0a7d2c; }
+  </style>
+</head>
+<body>
+  <h2>Summarize, Don&#39;t Watch</h2>
+  <p>Summaries come from YouTube's own Ask / Gemini feature. You must be signed in to YouTube, and Ask must be available on your account.</p>
+
+  <label for="parallel">Background tabs at once</label>
+  <input id="parallel" type="number" min="1" max="6">
+  <small>1–6. More is faster, but YouTube may throttle Ask if you push it.</small>
+
+  <div><button id="save">Save</button><span id="status"></span></div>
+  <div><button id="clear">Clear summary cache</button></div>
+  <script src="options.js"></script>
+</body>
+</html>
